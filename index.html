@@ -22,10 +22,36 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .header {
-            text-align: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
             border-bottom: 2px solid #0d6efd;
             padding-bottom: 20px;
             margin-bottom: 30px;
+            flex-wrap: wrap; 
+            text-align: center; 
+        }
+        .photo-placeholder {
+            width: 120px;
+            height: 120px;
+            background-image: url('photo.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            border-radius: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ccc;
+            flex-shrink: 0; 
+            margin-right: 30px; 
+            margin-bottom: 15px; 
+            
+        }
+
+        .header-content {
+            flex-grow: 1; 
+            text-align: left; 
         }
         .header h1 {
             margin: 0;
@@ -43,7 +69,7 @@
             margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start; 
             gap: 15px 30px;
         }
         .contact-info li {
@@ -100,84 +126,118 @@
             padding-left: 20px;
             margin-top: 10px;
         }
+        .telegram {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; 
+                text-align: center; 
+            }
+            .photo-placeholder {
+                margin-right: 0; 
+                margin-bottom: 20px; 
+            }
+            .header-content {
+                text-align: center; 
+            }
+            .contact-info {
+                justify-content: center; 
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header class="header">
+<div class="container">
+    <header class="header">
+        <div class="photo-placeholder"></div>
+        <div class="header-content">
             <h1>Башкирцев Дмитрий Михайлович</h1>
             <p>Java Разработчик</p>
             <ul class="contact-info">
                 <li><a href="mailto:bdm1999@yandex.ru">bdm1999@yandex.ru</a></li>
-                <li><a href="tel:+79221674241">+7 (922) 167-42-41</a></li>
+                <li>
+
+                    <a class="telegram" href="https://t.me/lytvest"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+                        </svg>
+                        <div style="margin-left: 5px">@lytvest</div>
+                    </a>
+
+                </li>
                 <li>Екатеринбург</li>
                 <li><a href="https://github.com/lytvest" target="_blank">github.com/lytvest</a></li>
             </ul>
-        </header>
+        </div>
+    </header>
 
-        <section class="section">
-            <h2>Обо мне</h2>
-            <p>
-                Опытный Java-разработчик с 3-летним стажем коммерческой разработки. Уверенно владею стеком технологий для создания надежных и масштабируемых back-end систем. Имею опыт работы в команде, включая участие в код-ревью и оценке задач. Стремлюсь к профессиональному росту и применению лучших практик в разработке.
-            </p>
-        </section>
+    <section class="section">
+        <h2>Обо мне</h2>
+        <p>
+            Опытный Java-разработчик с 3-летним стажем коммерческой разработки. Уверенно владею стеком технологий для создания надежных и масштабируемых back-end систем. Имею опыт работы в команде, включая участие в код-ревью и оценке задач. Стремлюсь к профессиональному росту и применению лучших практик в разработке.
+        </p>
+    </section>
 
-        <section class="section">
-            <h2>Ключевые навыки</h2>
-            <ul class="skills-grid">
-                <li>Java 8/11/17+</li>
-                <li>Spring Framework</li>
-                <li>Spring Boot</li>
-                <li>Spring Data / JPA</li>
-                <li>Hibernate</li>
-                <li>SQL (PostgreSQL)</li>
-                <li>NoSQL (Redis)</li>
-                <li>RESTful API</li>
-                <li>Gradle</li>
-                <li>Git</li>
-                <li>Docker</li>
-                <li>JUnit / Mockito</li>
-                <li>Микросервисы</li>
-                <li>RabbitMQ / Artemis JMS</li>
-                <li>Linux / Bash</li>
-                <li>Jenkins</li>
-            </ul>
-        </section>
+    <section class="section">
+        <h2>Ключевые навыки</h2>
+        <ul class="skills-grid">
+            <li>Java 8/11/17+</li>
+            <li>Spring Framework</li>
+            <li>Spring Boot</li>
+            <li>Spring Data / JPA</li>
+            <li>Hibernate</li>
+            <li>SQL (PostgreSQL)</li>
+            <li>NoSQL (Redis)</li>
+            <li>RESTful API</li>
+            <li>Gradle</li>
+            <li>Git</li>
+            <li>Docker</li>
+            <li>JUnit / Mockito</li>
+            <li>Микросервисы</li>
+            <li>RabbitMQ / Artemis JMS</li>
+            <li>Linux / Bash</li>
+            <li>Jenkins</li>
+        </ul>
+    </section>
 
-        <section class="section">
-            <h2>Опыт работы</h2>
-            <div class="job">
-                <h3>ООО "Информационные системы"</h3>
-                <p><span class="job-title">Java Разработчик</span><br>
+    <section class="section">
+        <h2>Опыт работы</h2>
+        <div class="job">
+            <h3>ООО "Информационные системы"</h3>
+            <p><span class="job-title">Java Разработчик</span><br>
                 <span class="job-period">Июнь 2022 — настоящее время (3 года 1 месяц)</span></p>
-                <ul class="job-duties">
-                    <li>Анализ бизнес-требований и технических заданий.</li>
-                    <li>Разработка и поддержка серверной части приложений на Java и Spring.</li>
-                    <li>Написание чистого, эффективного и поддерживаемого программного кода.</li>
-                    <li>Оценка трудозатрат по задачам в рамках спринта.</li>
-                    <li>Диагностика и исправление выявленных дефектов.</li>
-                    <li>Проведение код-ревью для коллег с целью улучшения качества кода.</li>
-                    <li>Работа с базами данных, проектирование и оптимизация запросов.</li>
-                </ul>
-            </div>
-        </section>
+            <ul class="job-duties">
+                <li>Анализ бизнес-требований и технических заданий.</li>
+                <li>Разработка и поддержка серверной части приложений на Java и Spring.</li>
+                <li>Написание чистого, эффективного и поддерживаемого программного кода.</li>
+                <li>Оценка трудозатрат по задачам в рамках спринта.</li>
+                <li>Диагностика и исправление выявленных дефектов.</li>
+                <li>Проведение код-ревью для коллег с целью улучшения качества кода.</li>
+                <li>Работа с базами данных, проектирование и оптимизация запросов.</li>
+            </ul>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Образование</h2>
-            <div class="education">
-                <h3>Уральский государственный экономический университет (УрГЭУ-СИНХ)</h3>
-                <p>Год окончания: 2023</p>
-            </div>
-        </section>
+    <section class="section">
+        <h2>Образование</h2>
+        <div class="education">
+            <h3>Уральский государственный экономический университет (УрГЭУ-СИНХ)</h3>
+            <p>Год окончания: 2023</p>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Языки</h2>
-            <p>Русский — Родной</p>
-            <p>Английский — A2 (Elementary)</p>
-        </section>
+    <section class="section">
+        <h2>Языки</h2>
+        <p>Русский — Родной</p>
+        <p>Английский — A2 (Elementary)</p>
+    </section>
 
-    </div>
+</div>
 
 </body>
 </html>
